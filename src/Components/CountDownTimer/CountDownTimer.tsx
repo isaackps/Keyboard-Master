@@ -20,7 +20,7 @@ export const CountDownTimer: FunctionComponent<CountDownTimerProps> = ({
   resetTimer,
   setResetTimer,
 }) => {
-  const TIME_LIMIT = 10;
+  const TIME_LIMIT = 60;
   const FULL_DASH_ARRAY = 283;
   const WARNING_THRESHOLD = 10;
   const ALERT_THRESHOLD = 5;
