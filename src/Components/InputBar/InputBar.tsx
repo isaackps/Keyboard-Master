@@ -102,12 +102,15 @@ export const InputBar: FunctionComponent<InputBarProps> = ({
     }
     if (event.key === " " || event.key === "Enter") {
       event.preventDefault();
-      setTotalNumberOfWordsTyped(totalNumberOfWordsTyped + 1);
       if (typedWord) {
+        setTotalNumberOfWordsTyped(totalNumberOfWordsTyped + 1);
         setTypedWords([...typedWords, typedWord]);
         setTypedWord("");
         event.target.innerText = "";
-        const generateRandomWord = randomWords(1) as string[];
+        const generateRandomWord = randomWords({
+          exactly: 1,
+          maxLength: 6,
+        }) as string[];
         setWordsArray([...wordsArray.splice(1), ...generateRandomWord]);
         setMasterList([...masterList, ...generateRandomWord]);
         if (typedWord === currentWord) {
@@ -150,7 +153,17 @@ export const InputBar: FunctionComponent<InputBarProps> = ({
   };
 
   return (
-    <div className="w-screen max-w-7xl flex justify-center my-24">
+    <div className="w-screen max-w-7xl flex justify-center my-24 relative">
+      <div className="absolute z-10 -top-8">
+        <div
+          className={`relative z-10 bg-green-300 rounded shadow-lg py-2 px-4 transition duration-500 ease-in-out animate__animated animate__bounce animate__infinite ${
+            startTimer ? "opacity-0" : "opacity-100"
+          }`}
+        >
+          <span>Type in here to start!</span>
+          <div className="absolute bg-green-300 w-4 h-4 transform rotate-45 -bottom-2 right-1/2" />
+        </div>
+      </div>
       <div
         className="bg-white rounded shadow-lg w-1/2 h-20 relative text-3xl flex items-center cursor-text inline-block"
         onClick={() => caretFocus()}

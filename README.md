@@ -2,6 +2,8 @@
 
 This project is a speed typing test.
 
+![App Image](/src/images/screenshot.png)
+
 ## Development
 
 1. Install dependencies

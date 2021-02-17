@@ -15,8 +15,8 @@ export const ScorePopup: FunctionComponent<ScorePopupProps> = ({
   accuracy,
 }) => {
   return (
-    <div className="absolute top-0 left-0 w-screen h-screen z-10 flex items-center justify-center">
-      <div className="relative w-1/2 max-w-3xl h-96 bg-white rounded-lg z-20 flex flex-col items-center justify-center shadow-xl">
+    <div className="absolute top-0 left-0 w-screen h-screen z-20 flex items-center justify-center">
+      <div className="relative w-1/2 max-w-3xl h-96 bg-white rounded-lg z-30 flex flex-col items-center justify-center shadow-xl">
         <div
           className="absolute top-0 right-0 m-4 cursor-pointer"
           onClick={resetTest}
