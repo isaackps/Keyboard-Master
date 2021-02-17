@@ -12,7 +12,7 @@ export const HomePage: FunctionComponent = () => {
   const [startTimer, setStartTimer] = useState(false);
   const [displayPopup, setDisplayPopup] = useState(false);
   const [internalClock, setInternalClock] = useState(0);
-  const randomW = randomWords(5);
+  const randomW = randomWords({ exactly: 5, maxLength: 6 });
   const [words, setWords] = useState(
     typeof randomW === "string" ? [randomW] : randomW
   );
